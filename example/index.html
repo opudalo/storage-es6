@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example</title>
+    <script src="../browser-polyfill.js"></script>
+    <script src="../client.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', init)
+      function init() {
+        var storage = new CrossDomainStorage({ origin: 'http://localhost:8000', path: '/example/iframe.html'})
+
+        storage.set({
+          es: 5
+        })
+
+        storage.get('es')
+
+        storage.set({
+          es: 6,
+          html: 8
+        })
+
+        storage.get('es')
+ 
+        storage.remove('html')
+
+        storage.get('', function (data) {
+          console.log('all:', data)    
+        })
+      }
+    </script>
+  </head>
+  <body>
+  <h1>CrossDomainStorage example. Open console.</h1>
+  </body>
+</html>

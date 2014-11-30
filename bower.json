@@ -1,0 +1,7 @@
+{
+    "name": "storage-es6",
+    "description": "CrossDomainStorage es6 module",
+    "main": "client.es6.js",
+    "dependencies": {}
+}
+
