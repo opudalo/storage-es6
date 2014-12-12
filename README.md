@@ -7,7 +7,7 @@
 
 ### Running Example
 
-    $ git clone
+    $ git clone git@github.com:zheneva/storage-es6.git
     $ npm install 
     $ gulp
 
