@@ -9,7 +9,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', init)
       function init() {
-        var storage = new CrossDomainStorage({ origin: 'http://localhost:8000', path: '/example/iframe.html'})
+        var storage = new CrossDomainStorage({ origin: 'http://localhost:8000', path: '/example/iframe.html', sync: true})
 
         storage.set({
           es: 5

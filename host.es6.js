@@ -11,8 +11,12 @@ class CrossDomainStorageHost {
       id: id,
     }
 
-    if (key) msg.data = localStorage.getItem(key)
-    else for (var i in localStorage) msg.data[i] = localStorage.getItem(i)
+    if (key) {
+      msg.data = localStorage.getItem(key)
+    } else {
+      msg.data = {}
+      for (var i in localStorage) msg.data[i] = localStorage.getItem(i)
+    }
 
     this._respond(msg, event)
   }
