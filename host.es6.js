@@ -1,4 +1,4 @@
-class CrossDomainStorageHost {
+export default class CrossDomainStorageHost {
   constructor(config) {
     this.whitelist = config.whitelist || []
 
