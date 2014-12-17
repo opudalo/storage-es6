@@ -21,7 +21,7 @@ gulp.task('watch', function() {
 gulp.task('es6', function () {
     return gulp.src('./**/*.es6.js')
         .pipe(to5({
-          modules: 'ignore'
+          modules: 'commonInterop'
         }))
         .pipe(rename(function (path) {
           console.log(path)

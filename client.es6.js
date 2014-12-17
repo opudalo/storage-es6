@@ -1,4 +1,4 @@
-class CrossDomainStorage {
+export default class CrossDomainStorage {
   constructor(config) {
     if (!config.origin) throw "URL is not specified"
     this.origin = config.origin
@@ -91,54 +91,3 @@ class CrossDomainStorage {
 function on(el, event, cb) {
   el.addEventListener(event, cb, false)
 }
-
-/*
-
-
-
-  request: function (req, callback) {
-    req.id = ++this._id
-
-    this._request({
-      request: req,
-      callback: callback
-    })
-  },
-
-  //private methods
-  _request: function(data) {
-    if (this._iframeReady) {
-      this._sendRequest(data)
-    } else {
-      this._queue.push(data)
-    }
-
-    if (!this._iframe) this.init()
-  },
-
-  _sendRequest: function(data){
-    this._requests[data.request.id] = data
-    this._iframe.contentWindow.postMessage(JSON.stringify(data.request), this.origin)
-  },
-
-  _iframeLoaded: function(){
-  },
-
-  _handleMessage: function(event){
-    if (event.origin != this.origin) return
-
-    var data
-
-    try {
-      data = JSON.parse(event.data)
-    } catch (e) {
-      console.error('Error while parsing response from remote storage', e)
-    }
-    var req = this._requests[data.id]
-    req.callback && req.callback(data.key, data.value)
-    delete this._requests[data.id]
-  }
-
-}
-
-*/
